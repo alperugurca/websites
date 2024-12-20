@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sunum</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .pdf-container {
+            width: 100%;
+            height: 100vh;
+            display: none;
+        }
+        .pdf-container.active {
+            display: block;
+        }
+        embed {
+            width: 100%;
+            height: 100%;
+        }
+        .buttons {
+            position: fixed;
+            bottom: 10px; /* Butonları alta taşıdık */
+            right: 10px;
+            z-index: 1000;
+        }
+        button {
+            padding: 10px;
+            margin: 5px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.8); /* Yarı saydam arka plan */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="pdf1" class="pdf-container active">
+        <embed src="kahve.pdf" type="application/pdf">
+    </div>
+    <div id="pdf2" class="pdf-container">
+        <embed src="ROR_Kitap.pdf" type="application/pdf">
+    </div>
+
+    <div class="buttons">
+        <button onclick="showPDF('pdf1')">Kahve PDF</button>
+        <button onclick="showPDF('pdf2')">ROR PDF</button>
+    </div>
+
+    <script>
+        function showPDF(pdfId) {
+            document.querySelectorAll('.pdf-container').forEach(container => {
+                container.classList.remove('active');
+            });
+            document.getElementById(pdfId).classList.add('active');
+        }
+    </script>
+</body>
+</html>
