@@ -22,7 +22,7 @@
         }
         .buttons {
             position: fixed;
-            bottom: 10px; /* Butonları alta taşıdık */
+            bottom: 10px;
             right: 10px;
             z-index: 1000;
         }
@@ -30,7 +30,7 @@
             padding: 10px;
             margin: 5px;
             cursor: pointer;
-            background-color: rgba(255, 255, 255, 0.8); /* Yarı saydam arka plan */
+            background-color: rgba(255, 255, 255, 0.8);
             border: 1px solid #ccc;
             border-radius: 5px;
         }
@@ -43,10 +43,14 @@
     <div id="pdf2" class="pdf-container">
         <embed src="ROR_Kitap.pdf" type="application/pdf">
     </div>
+    <div id="pdf3" class="pdf-container">
+        <embed src="https://github.com/alperugurca/websites/raw/main/netlify/stealed-coffee-slide.pdf" type="application/pdf">
+    </div>
 
     <div class="buttons">
         <button onclick="showPDF('pdf1')">Kahve PDF</button>
         <button onclick="showPDF('pdf2')">ROR PDF</button>
+        <button onclick="showPDF('pdf3')">Stealed Coffee Slide PDF</button>
     </div>
 
     <script>
